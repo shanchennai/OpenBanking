@@ -11,18 +11,17 @@
                             </div>
                             <div class="offset-md-2 col-md-5">
                                 <div class="row mb-1">
-                                    <label class="col-md-2 form-control-label">Level1</label>
+                                    <label class="col-md-3 form-control-label">Success</label>
                                     <div class="col-md-4 mt-2  progress progress-bar bg-success progress-bar-striped"
                                         style="width:100%"></div>
 
                                 </div>
                                 <div class="row mb-1">
-                                    <label class="col-md-2 form-control-label">Level2</label>
+                                    <label class="col-md-3 form-control-label">Failure</label>
                                     <div class="col-md-4 mt-2 progress progress-bar bg-danger progress-bar-striped"
                                         style="width:100%"></div>
 
                                 </div>
-
                             </div>
                         </div>
                         <div class="card-body">
@@ -30,28 +29,30 @@
                                 <div class="col-sm-6">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title">User 1</h5>
-                                            <form class="form" role="form" autocomplete="off">
+                                            <h5 class="card-title">Client 1</h5>
+                                            <form #client1Form="ngForm" class="form" role="form" autocomplete="off">
                                                 <div class="form-group row">
-                                                    <label
+                                                    <label for="name"
                                                         class="col-md-3 col-form-label form-control-label">Name</label>
                                                     <div class="col-md-9">
-                                                        <input class="form-control" type="text" value="Jane">
+                                                        <input id="name" name="name" [(ngModel)]="client1.name"
+                                                            class="form-control" type="text" value="Jane">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label
+                                                    <label for="email"
                                                         class="col-md-3 col-form-label form-control-label">Email</label>
                                                     <div class="col-md-9">
-                                                        <input class="form-control" type="email"
-                                                            value="email@gmail.com">
+                                                        <input class="form-control" type="email" id="email" name="email"
+                                                            [(ngModel)]="client1.email" value="email@gmail.com">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label
+                                                    <label for="country"
                                                         class="col-md-3 col-form-label form-control-label">Country</label>
                                                     <div class="col-md-9">
-                                                        <select id="user_time_zone" class="form-control" size="0"
+                                                        <select id="country" [(ngModel)]="client1.country"
+                                                            name="country" class="form-control" size="0"
                                                             (change)="onChangeCountry($event.target.value)">
                                                             <option *ngFor="let country of countries"
                                                                 [value]="country.id">
@@ -60,10 +61,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label
+                                                    <label for="state"
                                                         class="col-md-3 col-form-label form-control-label">State</label>
                                                     <div class="col-md-9">
-                                                        <select id="user_time_zone" class="form-control" size="0"
+                                                        <select id="state" [(ngModel)]="client1.state" name="state"
+                                                            class="form-control" size="0"
                                                             (change)="onChangeStates($event.target.value)">
                                                             <option *ngFor="let state of states" [value]="state.id">
                                                                 {{state.name}}
@@ -72,10 +74,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label
+                                                    <label for="city"
                                                         class="col-md-3 col-form-label form-control-label">City</label>
                                                     <div class="col-md-9">
-                                                        <select id="user_time_zone" class="form-control" size="0"
+                                                        <select id="city" [(ngModel)]="client1.city" name="city"
+                                                            class="form-control" size="0"
                                                             (change)="onChangeCities($event.target.value)">
                                                             <option *ngFor="let city of cities" [value]="city.id">
                                                                 {{city.name}}</option>
@@ -83,18 +86,21 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label
+                                                    <label for="address"
                                                         class="col-md-3 col-form-label form-control-label">Address</label>
                                                     <div class="col-md-9">
-                                                        <textarea rows="6" name="message2" id="message2"
-                                                            class="form-control" required=""></textarea>
+                                                        <textarea rows="6" [(ngModel)]="client1.address" name="address"
+                                                            id="address" class="form-control" required=""></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-md-3 col-form-label form-control-label">Line of
+                                                    <label for="lineOfBusiness"
+                                                        class="col-md-3 col-form-label form-control-label">Line of
                                                         Business</label>
                                                     <div class="col-md-9">
-                                                        <input class="form-control" type="text" value="janeuser">
+                                                        <input id="lineOfBusiness" [(ngModel)]="client1.lineOfBusiness"
+                                                            name="lineOfBusiness" class="form-control" type="text"
+                                                            value="janeuser">
                                                     </div>
                                                 </div>
                                             </form>
@@ -104,28 +110,30 @@
                                 <div class="col-sm-6">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title">User 2</h5>
-                                            <form class="form" role="form" autocomplete="off">
+                                            <h5 class="card-title">Client 2</h5>
+                                            <form #client2Form="ngForm" class="form" role="form" autocomplete="off">
                                                 <div class="form-group row">
-                                                    <label
+                                                    <label for="name"
                                                         class="col-md-3 col-form-label form-control-label">Name</label>
                                                     <div class="col-md-9">
-                                                        <input class="form-control" type="text" value="Jane">
+                                                        <input id="name" name="name" [(ngModel)]="client2.name"
+                                                            class="form-control" type="text" value="Jane">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label
+                                                    <label for="email"
                                                         class="col-md-3 col-form-label form-control-label">Email</label>
                                                     <div class="col-md-9">
-                                                        <input class="form-control" type="email"
-                                                            value="email@gmail.com">
+                                                        <input class="form-control" type="email" id="email" name="email"
+                                                            [(ngModel)]="client2.email" value="email@gmail.com">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label
+                                                    <label for="country"
                                                         class="col-md-3 col-form-label form-control-label">Country</label>
                                                     <div class="col-md-9">
-                                                        <select id="user_time_zone" class="form-control" size="0"
+                                                        <select id="country" [(ngModel)]="client2.country"
+                                                            name="country" class="form-control" size="0"
                                                             (change)="onChangeCountry($event.target.value)">
                                                             <option *ngFor="let country of countries"
                                                                 [value]="country.id">
@@ -134,10 +142,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label
+                                                    <label for="state"
                                                         class="col-md-3 col-form-label form-control-label">State</label>
                                                     <div class="col-md-9">
-                                                        <select id="user_time_zone" class="form-control" size="0"
+                                                        <select id="state" [(ngModel)]="client2.state" name="state"
+                                                            class="form-control" size="0"
                                                             (change)="onChangeStates($event.target.value)">
                                                             <option *ngFor="let state of states" [value]="state.id">
                                                                 {{state.name}}
@@ -146,10 +155,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label
+                                                    <label for="city"
                                                         class="col-md-3 col-form-label form-control-label">City</label>
                                                     <div class="col-md-9">
-                                                        <select id="user_time_zone" class="form-control" size="0"
+                                                        <select id="city" [(ngModel)]="client2.city" name="city"
+                                                            class="form-control" size="0"
                                                             (change)="onChangeCities($event.target.value)">
                                                             <option *ngFor="let city of cities" [value]="city.id">
                                                                 {{city.name}}</option>
@@ -157,18 +167,21 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label
+                                                    <label for="address"
                                                         class="col-md-3 col-form-label form-control-label">Address</label>
                                                     <div class="col-md-9">
-                                                        <textarea rows="6" name="message2" id="message2"
-                                                            class="form-control" required=""></textarea>
+                                                        <textarea rows="6" [(ngModel)]="client2.address" name="address"
+                                                            id="address" class="form-control" required=""></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-md-3 col-form-label form-control-label">Line
-                                                        of Business</label>
+                                                    <label for="lineOfBusiness"
+                                                        class="col-md-3 col-form-label form-control-label">Line of
+                                                        Business</label>
                                                     <div class="col-md-9">
-                                                        <input class="form-control" type="text" value="janeuser">
+                                                        <input id="lineOfBusiness" [(ngModel)]="client2.lineOfBusiness"
+                                                            name="lineOfBusiness" class="form-control" type="text"
+                                                            value="janeuser">
                                                     </div>
                                                 </div>
                                             </form>
@@ -176,26 +189,29 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group row mt-3">
+                            <form #commodityForm="ngForm" class="form" role="form" autocomplete="off">
+                                <div class="form-group row mt-3">
                                     <div class="offset-md-1 col-md-8  form-check-inline">
-                                            <label class="col-md-2 col-form-label form-control-label">commodity</label>
-                                            <div class="col-md-4">
-                                                <input class="form-control" type="text" value="">
-                                            </div>
+                                        <label class="col-md-2 col-form-label form-control-label">commodity</label>
+                                        <div class="col-md-4">
+                                            <input class="form-control" name="commodity" [(ngModel)]="commodityValue" type="text" value="">
+                                        </div>
                                     </div>
                                 </div>
+                            </form>
                         </div>
                         <div class="card-footer text-muted">
                             <div class="form-group row">
                                 <div class="row offset-md-1 col-md-3 form-check-inline">
                                     <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input" value="">I Agree 
+                                        <input type="checkbox" class="form-check-input" [(ngModel)]="isAgreeChecked">I Agree
                                     </label>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-9 offset-md-1">
-                                    <input type="button" class="btn btn-success float-right" value="Validate">
+                                    <input type="button" (click)="formSubmit(client1Form.value, client2Form.value, commodityForm.value)"
+                                        type="submit" class="btn btn-success float-right" [disabled]="!isAgreeChecked" value="Validate">
                                 </div>
                             </div>
                             <div class="form-group row">
