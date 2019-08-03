@@ -1,0 +1,209 @@
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="anchor" id="formContact"></span>
+                    <div class="card card-outline-secondary">
+                        <div class="row card-header">
+                            <div class="col-md-5">
+                                <h3 class="mb-0">User Information</h3>
+                            </div>
+                            <div class="offset-md-2 col-md-5">
+                                <div class="row mb-2">
+                                    <label class="col-md-3 form-control-label">Level1</label>
+                                    <div class="col-md-4 mt-2  progress progress-bar bg-success progress-bar-striped"
+                                        style="width:100%"></div>
+
+                                </div>
+                                <div class="row mb-2">
+                                    <label class="col-md-3 form-control-label">Level2</label>
+                                    <div class="col-md-4 mt-2 progress progress-bar bg-danger progress-bar-striped"
+                                        style="width:100%"></div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                    <div class="col-sm-6">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">User 1</h5>
+                                                    <form class="form" role="form" autocomplete="off">
+                                                        <div class="form-group row">
+                                                            <label class="col-md-3 col-form-label form-control-label">Name</label>
+                                                            <div class="col-md-9">
+                                                                <input class="form-control" type="text" value="Jane">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-md-3 col-form-label form-control-label">Email</label>
+                                                            <div class="col-md-9">
+                                                                <input class="form-control" type="email" value="email@gmail.com">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label
+                                                                class="col-md-3 col-form-label form-control-label">Country</label>
+                                                            <div class="col-md-9">
+                                                                <select id="user_time_zone" class="form-control" size="0"
+                                                                    (change)="onChangeCountry($event.target.value)">
+                                                                    <option *ngFor="let country of countries" [value]="country.id">
+                                                                        {{country.name}}</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-md-3 col-form-label form-control-label">State</label>
+                                                            <div class="col-md-9">
+                                                                <select id="user_time_zone" class="form-control" size="0"
+                                                                    (change)="onChangeStates($event.target.value)">
+                                                                    <option *ngFor="let state of states" [value]="state.id">
+                                                                        {{state.name}}
+                                                                    </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-md-3 col-form-label form-control-label">City</label>
+                                                            <div class="col-md-9">
+                                                                <select id="user_time_zone" class="form-control" size="0"
+                                                                    (change)="onChangeCities($event.target.value)">
+                                                                    <option *ngFor="let city of cities" [value]="city.id">
+                                                                        {{city.name}}</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label
+                                                                class="col-md-3 col-form-label form-control-label">Address</label>
+                                                            <div class="col-md-9">
+                                                                <textarea rows="6" name="message2" id="message2"
+                                                                    class="form-control" required=""></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-md-3 col-form-label form-control-label">Line of
+                                                                Business</label>
+                                                            <div class="col-md-9">
+                                                                <input class="form-control" type="text" value="janeuser">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-md-3 col-form-label form-control-label"></label>
+                                                            <div class="col-md-9">
+                                                                <input type="button" class="btn btn-success float-right"
+                                                                    value="Validate">
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">User 2</h5>
+                                                        <form class="form" role="form" autocomplete="off">
+                                                            <div class="form-group row">
+                                                                <label
+                                                                    class="col-md-3 col-form-label form-control-label">Name</label>
+                                                                <div class="col-md-9">
+                                                                    <input class="form-control" type="text" value="Jane">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label
+                                                                    class="col-md-3 col-form-label form-control-label">Email</label>
+                                                                <div class="col-md-9">
+                                                                    <input class="form-control" type="email"
+                                                                        value="email@gmail.com">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label
+                                                                    class="col-md-3 col-form-label form-control-label">Country</label>
+                                                                <div class="col-md-9">
+                                                                    <select id="user_time_zone" class="form-control" size="0"
+                                                                        (change)="onChangeCountry($event.target.value)">
+                                                                        <option *ngFor="let country of countries"
+                                                                            [value]="country.id">
+                                                                            {{country.name}}</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label
+                                                                    class="col-md-3 col-form-label form-control-label">State</label>
+                                                                <div class="col-md-9">
+                                                                    <select id="user_time_zone" class="form-control" size="0"
+                                                                        (change)="onChangeStates($event.target.value)">
+                                                                        <option *ngFor="let state of states" [value]="state.id">
+                                                                            {{state.name}}
+                                                                        </option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label
+                                                                    class="col-md-3 col-form-label form-control-label">City</label>
+                                                                <div class="col-md-9">
+                                                                    <select id="user_time_zone" class="form-control" size="0"
+                                                                        (change)="onChangeCities($event.target.value)">
+                                                                        <option *ngFor="let city of cities" [value]="city.id">
+                                                                            {{city.name}}</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label
+                                                                    class="col-md-3 col-form-label form-control-label">Address</label>
+                                                                <div class="col-md-9">
+                                                                    <textarea rows="6" name="message2" id="message2"
+                                                                        class="form-control" required=""></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-md-3 col-form-label form-control-label">Line
+                                                                    of Business</label>
+                                                                <div class="col-md-9">
+                                                                    <input class="form-control" type="text" value="janeuser">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label
+                                                                    class="col-md-3 col-form-label form-control-label"></label>
+                                                                <div class="col-md-9">
+                                                                    <input type="button" class="btn btn-success float-right"
+                                                                        value="Validate">
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                            </div>
+
+                        </div>
+                        <div class="card-footer text-muted">
+                                <div class="form-group row">
+                                    <div class="offset-md-1 col-md-3 form-check-inline">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" value="">Option
+                                            1
+                                        </label>
+                                    </div>
+                                    <div class="col-md-5 progress">
+                                        <div *ngIf="isValidateTrue"
+                                            class=" progress progress-bar bg-success progress-bar-striped"
+                                            style="width:100%"></div>
+                                        <div *ngIf="!isValidateTrue"
+                                            class=" progress progress-bar bg-danger progress-bar-striped"
+                                            style="width:100%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
